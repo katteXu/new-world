@@ -1,13 +1,17 @@
 import React from 'react';
-import { Button } from 'antd';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './pages/home';
+import User from './pages/user';
+interface AppProps { }
 
-interface AppProps {}
-
-function App({}: AppProps) {
+function App({ }: AppProps) {
   return (
-    <div className="App">
-      <Button>按钮2422</Button>
-    </div>
+    <Router >
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/user" component={User} />
+      </Switch>
+    </Router>
   );
 }
 
